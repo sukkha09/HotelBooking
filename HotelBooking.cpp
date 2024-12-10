@@ -4,30 +4,29 @@
 
 using namespace std;
 
-// Room structure to store room details
 struct Room {
     int roomNumber;
     bool isAvailable;
     string guestName;
 };
 
-// Class to manage the hotel booking system
+
 class Hotel {
 private:
     vector<Room> rooms;
     
 public:
-    // Constructor to initialize rooms
+    
     Hotel(int totalRooms) {
         for (int i = 1; i <= totalRooms; ++i) {
             Room room;
             room.roomNumber = i;
-            room.isAvailable = true;  // All rooms are initially available
+            room.isAvailable = true;  
             rooms.push_back(room);
         }
     }
 
-    // Function to display available rooms
+    
     void displayRooms() {
         cout << "Available Rooms:\n";
         for (const auto& room : rooms) {
@@ -37,7 +36,7 @@ public:
         }
     }
 
-    // Function to book a room
+    
     void bookRoom() {
         int roomNumber;
         string guestName;
@@ -63,7 +62,7 @@ public:
         }
     }
 
-    // Function to cancel a booking
+    
     void cancelBooking() {
         int roomNumber;
         cout << "Enter the room number to cancel the booking: ";
@@ -85,7 +84,7 @@ public:
         }
     }
 
-    // Function to check-in a guest
+    
     void checkIn() {
         int roomNumber;
         cout << "Enter the room number to check-in: ";
@@ -105,7 +104,7 @@ public:
         }
     }
 
-    // Function to check-out a guest
+    
     void checkOut() {
         int roomNumber;
         cout << "Enter the room number to check-out: ";
@@ -127,7 +126,7 @@ public:
         }
     }
 
-    // Function to display all room details
+    
     void displayBookingDetails() {
         cout << "Room Booking Details:\n";
         for (const auto& room : rooms) {
@@ -139,12 +138,12 @@ public:
 };
 
 int main() {
-    int totalRooms = 5;  // Define the total number of rooms
+    int totalRooms = 5;  
     Hotel hotel(totalRooms);
     int choice;
 
     do {
-        // Displaying menu
+        
         cout << "\nHotel Booking System\n";
         cout << "1. Display available rooms\n";
         cout << "2. Book a room\n";
